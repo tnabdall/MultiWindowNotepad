@@ -155,7 +155,9 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "mainForm";
             this.Text = "Menu Demonstration";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_Closing);
             this.Load += new System.EventHandler(this.mainForm_Load);
+            this.Resize += new System.EventHandler(this.mainForm_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

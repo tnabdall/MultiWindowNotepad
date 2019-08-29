@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.mainTextBox = new System.Windows.Forms.TextBox();
             this.colourContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colourContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,10 +61,18 @@
             this.colourContextMenuStrip.Name = "colourContextMenuStrip";
             this.colourContextMenuStrip.Size = new System.Drawing.Size(103, 92);
             // 
+            // blackToolStripMenuItem
+            // 
+            this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
+            this.blackToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.blackToolStripMenuItem.Tag = "Black";
+            this.blackToolStripMenuItem.Text = "Black";
+            this.blackToolStripMenuItem.Click += new System.EventHandler(this.TextEditColourChanged);
+            // 
             // redToolStripMenuItem
             // 
             this.redToolStripMenuItem.Name = "redToolStripMenuItem";
-            this.redToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.redToolStripMenuItem.Tag = "Red";
             this.redToolStripMenuItem.Text = "Red";
             this.redToolStripMenuItem.Click += new System.EventHandler(this.TextEditColourChanged);
@@ -72,7 +80,7 @@
             // blueToolStripMenuItem
             // 
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            this.blueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.blueToolStripMenuItem.Tag = "Blue";
             this.blueToolStripMenuItem.Text = "Blue";
             this.blueToolStripMenuItem.Click += new System.EventHandler(this.TextEditColourChanged);
@@ -80,18 +88,10 @@
             // vertToolStripMenuItem
             // 
             this.vertToolStripMenuItem.Name = "vertToolStripMenuItem";
-            this.vertToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vertToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.vertToolStripMenuItem.Tag = "Green";
             this.vertToolStripMenuItem.Text = "Vert";
             this.vertToolStripMenuItem.Click += new System.EventHandler(this.TextEditColourChanged);
-            // 
-            // blackToolStripMenuItem
-            // 
-            this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
-            this.blackToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.blackToolStripMenuItem.Tag = "Black";
-            this.blackToolStripMenuItem.Text = "Black";
-            this.blackToolStripMenuItem.Click += new System.EventHandler(this.TextEditColourChanged);
             // 
             // TextEditorForm
             // 
@@ -101,6 +101,7 @@
             this.Controls.Add(this.mainTextBox);
             this.Name = "TextEditorForm";
             this.Text = "untitled.txt";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TextEditorForm_FormClosing);
             this.colourContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
